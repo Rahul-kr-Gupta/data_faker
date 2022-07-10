@@ -90,5 +90,8 @@ if __name__== "__main__":
     format = 'json'
     
     # delete the previous created data
+    if os.path.exists(fileloc+filename+".json"):
+        os.remove(fileloc+filename+".json")
+    
     
     dummy_data_csv(fileloc=fileloc,filename=filename,count=count,meta=meta,format=format)
