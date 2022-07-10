@@ -1,0 +1,32 @@
+PIN||INT||number[:number(15,0,1)]
+HIN||BIGINT||number[:number(15,0,1)]
+T_1_1||VARCHAR(4)||string[:string(2,4)]
+GN_1_1||VARCHAR(100)||string[:string(10,50)]
+GN_1_2||VARCHAR(100)||string[:string(10,50)]
+SN_1_1||VARCHAR(150)||string[:string(10,50)]
+Gender||VARCHAR(1)||random_letter[:enum(M,F)]
+Date_of_Birth||Date(YYYY-MM-DD)||date[:date]
+Age||INT||number[:number(15,0,1)]
+Age_Code||SMALLINT||number[:number(5,0,1)]
+Email||VARCHAR(200)||string[:string(10,50)]
+Phone_1_Landline||VARCHAR(15)||phone number[:phone_number]
+Phone_1_LandLine_DNCR||VARCHAR(1)||random_letter[:enum(Y,N)]
+Phone_1_LandLine_DNCR_Process_Date||Date(YYYY-MM-DD)||date[:date]
+Phone_2_Mobile||VARCHAR(15)||phone number[:phone_number]
+Phone_2_Mobile_DNCR||VARCHAR(1)||random_letter[:enum(Y,N)]
+Phone_2_Mobile _DNCR_Process_Date||Date(YYYY-MM-DD)||date[:date]
+In_Suppresion_File||VARCHAR(255)||string[:string(10,50)]
+Suppression_Reason_For_PIN||VARCHAR(255)||string[:string(10,50)]
+Foxtel_PreReg_Match_Type||VARCHAR(255)||string[:string(10,50)]
+Foxtel_PreReg_Date||VARCHAR(255)||string[:string(10,50)]
+Foxtel_PreReg_Address||VARCHAR(255)||string[:string(10,50)]
+Foxtel_PreReg_Email||VARCHAR(255)||string[:string(10,50)]
+Foxtel_PreReg_Phone||VARCHAR(255)||string[:string(10,50)]
+Foxtel_PreReg_FirstName||VARCHAR(255)||string[:string(10,50)]
+Foxtel_PreReg_Last_Name||VARCHAR(255)||string[:string(10,50)]
+Experian Data_Load_Date||Date(YYYY-MM-DD)||date[:date]
+
+
+
+
+

@@ -1,0 +1,10 @@
+id||int||Increment id[:inc(id,1)]
+name||varchar(20)||student name
+nickname||varchar(20)||Student nickname[:enum(devil may cry, high little prince, song god, funny comparison)]
+age||int||student age[:age]
+class_num||int||class size[:int(10, 100)]
+score||decimal(4,2)||score[:decimal(4,2,1)]
+phone||bigint||phone number[:phone_number]
+email||varchar(64)||Home network mailbox[:email]
+ip||varchar(32)||IP address[:ipv4]
+address||text||home address[:address]
