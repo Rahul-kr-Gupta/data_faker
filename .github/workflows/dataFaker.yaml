@@ -29,6 +29,11 @@ jobs:
         run: |
           pytest --suppress-no-test-exit-code --suppress-tests-failed-exit-code
           
+      - name: check file directory
+        run: |
+          ls
+          pwd
+          
       - name: run datafaker
         run: |
           python dummydata.py
