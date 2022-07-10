@@ -1,4 +1,0 @@
-PIN || INT || number[:number(5,0,1)]
-HIN || BIGINT || number[:number(5,0,1)]
-Reason||VARCHAR(150)|| string[:string(10,50)]
-DataDate || Date(YYYY-MM-DD)|| date[:date]
