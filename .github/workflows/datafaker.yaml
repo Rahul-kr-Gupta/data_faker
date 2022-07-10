@@ -59,6 +59,7 @@ jobs:
         with:
             file-path: |
                 csv/*.csv
+                csv/*.csv.gz
                 parquet/*.parquet
                 json/*.json
             
