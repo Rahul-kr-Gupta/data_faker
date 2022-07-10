@@ -2,3 +2,4 @@ datafaker
 pyinputplus
 fastparquet
 pandas
+numpy
