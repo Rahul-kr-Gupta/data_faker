@@ -59,6 +59,8 @@ jobs:
         with:
             file-path: |
                 csv/*.csv
+                parquet/*.parquet
+                json/*.json
             
             commit-msg: Update resources
             github-token: ${{ secrets.GITHUB_TOKEN }}
