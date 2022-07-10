@@ -2,3 +2,4 @@ datafaker
 pyinputplus
 fastparquet
 pandas
+pytest-custom_exit_code
