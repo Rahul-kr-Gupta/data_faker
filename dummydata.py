@@ -1,8 +1,5 @@
 import pandas as pd
 import os
-import sys
-import argparse
-import readline
 import re
 import pyinputplus as pyip
 
@@ -36,7 +33,7 @@ mapping={'char': 'string',
  }
 def dummy_data_csv(fileloc,filename,meta,format,count=100):
     count = str(count)
-    filename = filename+'.'+format
+    output_filename = filename +'.'+format
     fileloc = fileloc.strip()
     meta=meta.strip()
     metafile = pd.read_fwf("""{}""".format(meta).replace('"',"").encode('unicode_escape').decode(),header=None)
@@ -48,22 +45,21 @@ def dummy_data_csv(fileloc,filename,meta,format,count=100):
     metafile = metafile.apply(lambda x: x.str.strip())
     
     column_mapping = dict(list(zip(metafile.column_name,metafile.python_types)))
-    print("""datafaker file {} {} {} --meta {} --format {}""".format(fileloc,filename,count,meta,format))
+    print("""datafaker file {} {} {} --meta {} --format {}""".format(fileloc,output_filename,count,meta,format))
 
     # ! calls the datafaker in cmd.
     
-    os.system("""datafaker file {} {} {} --meta {} --format {}""".format(fileloc,filename,count,meta,format))
+    os.system("""datafaker file {} {} {} --meta {} --format {}""".format(fileloc,output_filename,count,meta,format))
     # print()
-    path = """{}""".format(fileloc).replace('"',"")+'/'+filename
+    path = """{}""".format(fileloc).replace('"',"")+'/'+output_filename
     # print()
     df = pd.read_json(path.encode('unicode_escape').decode(),lines=True)
     
     df = df.astype(column_mapping)
     
-    path = """{}""".format(fileloc).replace('"',"")+'/'+filename.replace('.'+format,"")
     
     # ! create csv file
-    csv_path = """{}""".format(fileloc).replace('"',"")+'/csv'+'/' + filename.replace('.'+format,"")
+    csv_path = configur.get('csv','output_path') + filename
     gz_format= configur.get('csv','zip')
     s =  configur.get('csv','delimiter')
     
@@ -74,8 +70,14 @@ def dummy_data_csv(fileloc,filename,meta,format,count=100):
             
             
     # ! create parquet file
-    parquet_path = """{}""".format(fileloc).replace('"',"")+'/parquet'+'/' + filename.replace('.'+format,"")
+    parquet_path = csv_path = configur.get('parquet','output_path')+ filename
     df.to_parquet(parquet_path+".parquet".encode('unicode_escape').decode(),index=False)
+    
+    
+    # ! create json
+    
+    json_path =  configur.get('json','output_path')+ filename
+    df.to_json(json_path+".json",orient='records')
     
     print("File Created sucessfully")
     
