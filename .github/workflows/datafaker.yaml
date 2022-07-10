@@ -57,9 +57,7 @@ jobs:
       - name: Update all the new files
         uses: test-room-7/action-update-file@v1
         with:
-            file-path: |
-                csv/
-                parquet/
-                json/
+            file-path: csv/output.csv
+            
             commit-msg: Update resources
             github-token: ${{ secrets.GITHUB_TOKEN }}
